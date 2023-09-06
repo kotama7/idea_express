@@ -8,7 +8,9 @@ static_dir = base_dir / "frontend" / "static"
 
 
 
-app = Flask(__name__, template_folder=static_dir)
+app = Flask(__name__,
+            static_folder=static_dir,
+            template_folder=static_dir)
 
 @app.route("/", methods=["GET"])
 def index():
@@ -21,7 +23,7 @@ def start():
     if word2vector_model.word_is_valid(base_text):
         return redirect(f"/associate?base_name={base_text}")
     else:
-        render_template("html/index.html", error="そのような言葉では連想できません!!")
+        return render_template("html/index.html", error="そのような言葉では連想できません!!")
 
 @app.route("/associate", methods=["GET"])
 def associate():
@@ -33,7 +35,9 @@ def get_associate_array():
 
     word_list = json_array.get("words")
 
-    top_five = word2vector_model.word_list_up(word_list)
+    whole_words = json_array.get("whole_words")
+
+    top_five = word2vector_model.word_list_up(word_list, whole_words)
 
     return jsonify({"words":top_five})
 
