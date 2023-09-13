@@ -2,7 +2,7 @@
 
 // import axios from "axios"
 
-const url = "http://127.0.0.1:5000/associate"
+const url = "http://127.17.0.1:8000/associate"
 const nodes_ls = []
 const nodes_cheat = {}
 const edges_ls = []
@@ -55,10 +55,11 @@ function data_poster(id){
                 }
             }
         }
-        console.log(words_ls)
-        let get_post = associate_wrapper(id)
-        axios.post(url, {"words" : words_ls, "whole_words": whole_word})
-        .then(get_post);
+        if(words_ls[0] !== undefined){
+            let get_post = associate_wrapper(id)
+            axios.post(url, {"words" : words_ls, "whole_words": whole_word})
+            .then(get_post);
+        }
 }
 
 
@@ -93,9 +94,13 @@ function word_input(word_ls, node_id){
 
     container.innerHTML = ""
 
+    let c = 0
+
     for(let word in word_ls){
+        c++
         button = document.createElement("button")
         button.textContent = word_ls[word];
+        button.id = c
         func = button_click_wrapper(word_ls[word], node_id)
         button.addEventListener("click", func)
         container.append(button)
@@ -105,6 +110,7 @@ function word_input(word_ls, node_id){
     const submit_button = document.createElement("button")
     
     submit_button.textContent = "決定"
+    submit_button.id = 6
 
     input_text.setAttribute("type", "text");
 

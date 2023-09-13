@@ -6,6 +6,7 @@ import word2vector_model
 base_dir = Path(__file__).parents[1]
 static_dir = base_dir / "frontend" / "static"
 
+print(static_dir)
 
 
 app = Flask(__name__,
@@ -43,4 +44,4 @@ def get_associate_array():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=8000 ,debug=True)
+    app.run(host="0.0.0.0",port=8000,debug=True)

@@ -11,6 +11,9 @@ ENV TZ JST-9
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 
+RUN mkdir idea_express
+
+RUN cd ./idea_express
 
 WORKDIR /idea_express
 
@@ -18,6 +21,9 @@ COPY . .
 
 
 RUN pip install -r ./requirements.txt
+
+
+
 
 EXPOSE 8000
 
