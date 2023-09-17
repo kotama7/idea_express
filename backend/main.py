@@ -1,4 +1,5 @@
 from flask import *
+from flask_cors import CORS
 from pathlib import Path
 import word2vector_model
 
@@ -12,6 +13,8 @@ print(static_dir)
 app = Flask(__name__,
             static_folder=static_dir,
             template_folder=static_dir)
+
+CORS(app, origins=["http://127.0.0.1:8000"])
 
 @app.route("/", methods=["GET"])
 def index():

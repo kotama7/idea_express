@@ -8,6 +8,8 @@ ENV LANGUAGE ja_JP:ja
 ENV LC_ALL ja_JP.UTF-8
 ENV TZ JST-9
 
+RUN apt-get install git
+
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 
