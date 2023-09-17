@@ -3,21 +3,23 @@
 <head>
     <meta charset="utf-8">
     <title>IDEA EXPRESS App</title>
-    <link rel="stylesheet" href="static/css/styles.css"> 
-<head>
-
-<body background="static/img/mindmap.png">
-
-        <h1>連想の元になる言葉を入れてね！！</h1>
-        <h1>{{error}}</h1>
-
-        <form method="post">
-          <div class="submit-form">
-            <input type="text" name="base_name">
- 
-            <button type="submit"> 言語化する</button> 
-          </div>
-        </form>
-    
+    <link rel="stylesheet" href="css/styles.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <section class="main">
+    <span>あなたの想像力を広げるアプリです。</span>
+  </section>
+    <form method="post">
+    <div class="submit-form">
+      <div class="app name and description">
+        <h1>Discover your imagination</h1>
+      </div>
+      <input type="text" name="base_name" placeholder="Enter the first word">
+      <button type="submit">言語化</button>
+    </div>
+    </form>
+  <div id="particles-js"></div>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 </html>
