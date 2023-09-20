@@ -1,0 +1,162 @@
+/* レイアウトのためのCSS */
+#wrapper { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  }
+  
+  a {
+    color: #fff;
+  }
+  
+  /* particle js を描画するエリア設定 */
+  html, body {
+    height: 100%; /* 高さを100%にして描画エリアをとる */
+    margin: 0; /* マージンをゼロに設定 */
+    padding: 0; /* パディングをゼロに設定 */
+    overflow: hidden; /* オーバーフローを隠す */
+    background-color: transparent;
+    
+  }
+  
+  #particles-js { 
+    position: fixed; /* 描画固定 */
+    z-index: -1; /* 描画を一番下に */
+    width: 100%;
+    height: 100%;
+    }
+  
+  
+  .main span {
+    display: inline-block;
+    width: 23ch;
+    font: bold 200% Consolas, Monaco, monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 400;
+    border-right: 2px solid transparent;
+    animation: typing 5s steps(23), caret 0.3s steps(1) infinite;
+  }
+  
+  .submit-form{
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+  }
+
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+  
+  @keyframes caret {
+    50% {
+      border-right-color: currentColor;
+    }
+  }
+  
+  *{box-sizing: border-box;}
+  
+  .nice-wrap{
+    position: relative;
+    width: 500px;
+    height: 100px;
+   
+    margin: 0 auto;
+  }
+  
+  .nice-label{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    font-size: 16px;
+    color: #a0a0a0;
+    transition: all 0.25s ease;
+    
+    &.focus{
+      top: -25px;
+      left: 5px;
+      font-size: 14px;
+      color: #fff;
+    }
+  }
+  
+  .nice-textbox{
+    position: relative;
+    display: block;
+    width: 500px;
+    margin-top: 50px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #a0a0a0;
+    outline: none;
+  }
+  
+  .app-description{
+    top: 50px;
+    left: 50px;
+    
+  }
+
+
+  button[type="submit"] {
+    margin-left:0px;
+    margin-top: 200px;
+}
+
+  .main {
+    width: 100%;
+    height: auto; /* 高さを自動調整 */
+    display: flex;
+    flex-direction: column; /* タイトルとフォームを縦に配置 */
+    justify-content: center; /* 縦方向の中央揃え */
+    align-items: center; /* 横方向の中央揃え */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.submit-form {
+    width: 100%; /* 幅を100%に設定 */
+    max-width: 400px; /* 最大幅を設定 */
+    margin: 20px auto; /* 上下に余白を追加し、横方向に中央揃え */
+}
+
+body{
+  background:#ccc;
+}
+
+
+ #search-wrap {
+     position: absolute;/*絶対配置にして*/
+   z-index: 2;/*最前面に設定。数字は変更可*/
+   top:10px;
+   right:10px;
+}
+
+/*テキスト入力input設定*/
+ #search-text{
+  -webkit-appearance:none;/*SafariやChromeのデフォルトの設定を無効*/
+  width: 60px;/*テキスト入力エリアが伸びる前の横幅*/
+  height: 60px;
+    padding: 20px;
+  border: none;
+  background:#fff url("https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/7-2-3/img/icon_search.svg") no-repeat 17px center;/*虫眼鏡アイコンを背景に表示*/
+  background-size: 16px 25px;
+  transition: all 0.5s;/*transitionを使ってスムースに伸ばす*/
+  outline: none;
+  cursor: pointer;/*カーソルを指マークに*/
+}
+
+/*テキスト入力inputにフォーカスした時の形状*/
+ #search-text:focus {
+  width: 250px;/*テキスト入力エリアが伸びる後の横幅*/
+  padding: 20px 0 20px 60px;
+  box-shadow: 0 2px rgba(6,0,1,.26);
+}
