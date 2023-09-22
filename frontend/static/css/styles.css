@@ -30,6 +30,8 @@
   
   
   .main span {
+    position: fixed;
+    top: -150px;
     display: inline-block;
     width: 23ch;
     font: bold 200% Consolas, Monaco, monospace;
