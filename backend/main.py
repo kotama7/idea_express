@@ -1,7 +1,7 @@
 from flask import *
 from flask_cors import CORS
 from pathlib import Path
-import word2vector_model
+from backend import word2vector_model
 
 
 base_dir = Path(__file__).parents[1]
@@ -14,7 +14,7 @@ app = Flask(__name__,
             static_folder=static_dir,
             template_folder=static_dir)
 
-CORS(app, origins=["http://127.0.0.1:8000"])
+CORS(app, origins=["http://tachibana.ddns.net:49152"])
 
 @app.route("/", methods=["GET"])
 def index():
@@ -47,4 +47,4 @@ def get_associate_array():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=8000,debug=True)
+    app.run(host="0.0.0.0",port=49152,debug=False)

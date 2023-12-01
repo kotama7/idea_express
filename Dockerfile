@@ -24,10 +24,9 @@ COPY . .
 
 RUN pip install -r ./requirements.txt
 
+RUN pip install uWSGI
+
+EXPOSE 49152
 
 
-
-EXPOSE 8000
-
-
-CMD ["python", "./backend/main.py" ]
+CMD ["uwsgi", "uwsgi.ini" ]

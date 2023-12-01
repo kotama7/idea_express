@@ -2,7 +2,7 @@
 
 // import axios from "axios"
 
-const url = "http://127.17.0.1:8000/associate"
+const url = "http://tachibana.ddns.net:49152/associate"
 const nodes_ls = []
 const nodes_cheat = {}
 const edges_ls = []
